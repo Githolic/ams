@@ -1,6 +1,7 @@
 package gapp.model;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Embedded;
@@ -36,7 +37,7 @@ public class Application implements Serializable {
 	private Information information;
 
 	@OneToMany(mappedBy = "application")
-	private Set<Degree> degrees;
+	private List<Degree> degrees;
 
 	@Embedded
 	private Academic record;
@@ -88,11 +89,11 @@ public class Application implements Serializable {
 		this.program = program;
 	}
 
-	public Set<Degree> getDegrees() {
+	public List<Degree> getDegrees() {
 		return degrees;
 	}
 
-	public void setDegrees(Set<Degree> degrees) {
+	public void setDegrees(List<Degree> degrees) {
 		this.degrees = degrees;
 	}
 

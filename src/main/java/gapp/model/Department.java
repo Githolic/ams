@@ -1,6 +1,7 @@
 package gapp.model;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -21,16 +22,16 @@ public class Department implements Serializable {
     private Integer id;
     
     @OneToMany(mappedBy="department")
-    private Set<Application> applications;
+    private List<Application> applications;
     
     @OneToMany(mappedBy="department")
-    private Set<Program> programs;
+    private List<Program> programs;
     
-    public Set<Application> getApplications() {
+    public List<Application> getApplications() {
 		return applications;
 	}
 
-	public void setApplications(Set<Application> applications) {
+	public void setApplications(List<Application> applications) {
 		this.applications = applications;
 	}
 
@@ -54,11 +55,11 @@ public class Department implements Serializable {
 		this.departmentname = departmentname;
 	}
 
-	public Set<Program> getPrograms() {
+	public List<Program> getPrograms() {
 		return programs;
 	}
 
-	public void setPrograms(Set<Program> programs) {
+	public void setPrograms(List<Program> programs) {
 		this.programs = programs;
 	}
     

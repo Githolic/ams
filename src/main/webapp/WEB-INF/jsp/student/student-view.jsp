@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Admin Home</title>
+<title>Insert title here</title>
 </head>
 <body>
-<h2>Welcome back, <em>${authenticatedUser.firstname} ${authenticatedUser.lastname }</em></h2>
+
 </body>
 </html>

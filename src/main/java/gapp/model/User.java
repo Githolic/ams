@@ -1,6 +1,8 @@
 package gapp.model;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CollectionTable;
@@ -38,10 +40,10 @@ public class User implements Serializable{
     @CollectionTable(name = "authorities",
     		joinColumns = @JoinColumn(name = "user_id"))
     @Column(name = "usertype")
-    private Set<String> usertypes;
+    private List<String> usertypes;
     
     @OneToMany(mappedBy="user")
-    private Set<Application> applications;
+    private List<Application> applications;
 
 	public Integer getId() {
 		return id;
@@ -91,20 +93,33 @@ public class User implements Serializable{
 		this.username = username;
 	}
 
-	public Set<String> getUsertypes() {
+	public List<String> getUsertypes() {
 		return usertypes;
 	}
 
-	public void setUsertypes(Set<String> usertypes) {
+	public void setUsertypes(List<String> usertypes) {
 		this.usertypes = usertypes;
 	}
 
-	public Set<Application> getApplications() {
+	public List<Application> getApplications() {
 		return applications;
 	}
 
-	public void setApplications(Set<Application> applications) {
+	public void setApplications(List<Application> applications) {
 		this.applications = applications;
+	}
+
+	public boolean isAdmin() {
+		
+		return usertypes.contains("ROLE_ADMIN");
+	}
+	
+	public boolean isStaff() {
+		return usertypes.contains("ROLE_STAFF");
+	}
+	
+	public boolean isStudent() {
+		return usertypes.contains("ROLE_STUDENT");
 	}
 
    

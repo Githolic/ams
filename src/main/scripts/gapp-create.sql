@@ -1,4 +1,3 @@
-
     create table additional_infos (
         id int4 not null,
         additional_field_name varchar(255),
@@ -102,7 +101,7 @@
         foreign key (department_id) 
         references departments;
 
-    create sequence hibernate_sequence;
+    create sequence hibernate_sequence minvalue 100;
 
 
 
