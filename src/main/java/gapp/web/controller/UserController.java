@@ -19,5 +19,18 @@ public class UserController {
         models.put( "users", userDao.getUsers() );
         return "users";
     }
+    
+    @RequestMapping("/login.html")
+    public String login( ModelMap models )
+    {
+    	return "login";
+    }
+    
+    
+    @RequestMapping( "/register.html" )
+    public String register( ModelMap models )
+    {
+    	return "register";
+    }
 
 }
